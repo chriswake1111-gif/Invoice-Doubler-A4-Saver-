@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import DropZone from './components/DropZone';
 import A4Preview from './components/A4Preview';
 import Toolbar from './components/Toolbar';
