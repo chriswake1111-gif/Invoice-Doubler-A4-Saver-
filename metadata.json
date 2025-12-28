@@ -1,0 +1,5 @@
+{
+  "name": "Invoice Doubler (A4 Saver)",
+  "description": "Automatically layouts screenshots of delivery notes into two copies on a single A4 page for printing.",
+  "requestFramePermissions": []
+}
