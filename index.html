@@ -21,8 +21,11 @@
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
       
       body {
-        font-family: 'Inter', sans-serif;
+        /* Apple-style system font stack: San Francisco on Mac/iOS, Segoe UI on Windows */
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Inter", sans-serif;
         background-color: #f1f5f9; /* Slate 100 */
+        -webkit-font-smoothing: antialiased; /* Crisp text rendering on Mac */
+        -moz-osx-font-smoothing: grayscale;
       }
 
       /* Print Specific Styles */
