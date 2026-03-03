@@ -5,6 +5,7 @@ export interface ImageSettings {
   gap: number; // Gap between the two images in percentage or pixels
   brightness: number;
   contrast: number;
+  showStamp: boolean;
 }
 
 export const DEFAULT_SETTINGS: ImageSettings = {
@@ -14,4 +15,5 @@ export const DEFAULT_SETTINGS: ImageSettings = {
   gap: 40, // pixels
   brightness: 100,
   contrast: 100,
+  showStamp: false,
 };

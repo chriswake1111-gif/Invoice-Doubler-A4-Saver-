@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageSettings, DEFAULT_SETTINGS } from '../types';
-import { Printer, RefreshCw, Trash2, ZoomIn, Move, Sun, ArrowUpFromLine } from 'lucide-react';
+import { Printer, RefreshCw, Trash2, ZoomIn, Move, Sun, ArrowUpFromLine, Stamp } from 'lucide-react';
 
 interface ToolbarProps {
   settings: ImageSettings;
@@ -11,7 +11,7 @@ interface ToolbarProps {
 }
 
 const Toolbar: React.FC<ToolbarProps> = ({ settings, setSettings, onPrint, onClear, hasImage }) => {
-  
+
   const handleReset = () => {
     setSettings(DEFAULT_SETTINGS);
   };
@@ -24,10 +24,10 @@ const Toolbar: React.FC<ToolbarProps> = ({ settings, setSettings, onPrint, onCle
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-4 shadow-lg z-50 no-print flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-300">
-      
+
       {/* Controls Group */}
       <div className="flex flex-1 gap-6 items-center overflow-x-auto w-full md:w-auto pb-2 md:pb-0 px-2">
-        
+
         {/* Scale / Zoom */}
         <div className="flex flex-col gap-1 min-w-[120px]">
           <div className="flex items-center gap-2 text-slate-600 text-xs font-semibold uppercase tracking-wider">
@@ -58,8 +58,8 @@ const Toolbar: React.FC<ToolbarProps> = ({ settings, setSettings, onPrint, onCle
           />
         </div>
 
-         {/* Gap */}
-         <div className="flex flex-col gap-1 min-w-[120px]">
+        {/* Gap */}
+        <div className="flex flex-col gap-1 min-w-[120px]">
           <div className="flex items-center gap-2 text-slate-600 text-xs font-semibold uppercase tracking-wider">
             <ArrowUpFromLine size={14} /> 中間間距
           </div>
@@ -91,21 +91,31 @@ const Toolbar: React.FC<ToolbarProps> = ({ settings, setSettings, onPrint, onCle
 
       {/* Action Buttons */}
       <div className="flex items-center gap-3 shrink-0">
-        <button 
+        <button
           onClick={handleReset}
           className="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors"
           title="重置設定"
         >
           <RefreshCw size={20} />
         </button>
-        <button 
+        <button
           onClick={onClear}
           className="p-2 text-red-500 hover:bg-red-50 rounded-full transition-colors"
           title="清除圖片"
         >
           <Trash2 size={20} />
         </button>
-        <button 
+        <button
+          onClick={() => updateSetting('showStamp', Number(!settings.showStamp))}
+          className={`p-2 rounded-full transition-colors ${settings.showStamp ? 'text-red-500 bg-red-50' : 'text-slate-500 hover:bg-slate-100'}`}
+          title="副本章"
+        >
+          <div className="relative">
+            <Stamp size={20} />
+            {settings.showStamp && <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white" />}
+          </div>
+        </button>
+        <button
           onClick={onPrint}
           className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
         >
