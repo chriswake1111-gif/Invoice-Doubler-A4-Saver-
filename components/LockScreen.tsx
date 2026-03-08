@@ -56,7 +56,7 @@ const LockScreen: React.FC<LockScreenProps> = ({
 
                 <div className="mt-8 pt-6 border-t border-slate-100">
                     <p className="text-slate-300 text-[10px] tracking-[0.2em] uppercase font-medium">
-                        Made by ChrisChiu
+                        MADE BY LUKASCHIU
                     </p>
                 </div>
             </div>

@@ -86,7 +86,7 @@ const App: React.FC = () => {
           </p>
 
           <p className="text-slate-400 text-[10px] mt-6 font-medium tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity select-none cursor-default">
-            Made by ChrisChiu
+            MADE BY LUKASCHIU
           </p>
         </header>
       )}
